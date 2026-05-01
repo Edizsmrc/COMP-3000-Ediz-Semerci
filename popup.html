@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhishGuard AI</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">AI phishing detection for Gmail</p>
+        <h1>PhishGuard AI</h1>
+        <p class="subtext">Local machine-learning scoring with explainable link and content analysis.</p>
+      </div>
+      <div id="statusBadge" class="badge badge--neutral">Waiting</div>
+    </header>
+    <section class="card">
+      <div class="row row--space">
+        <h2>Current email</h2>
+        <button id="rescanButton" class="button">Rescan</button>
+      </div>
+      <div class="score-grid">
+        <div class="score-box">
+          <span class="score-label">Hybrid score</span>
+          <strong id="scoreValue">--</strong>
+        </div>
+        <div class="score-box">
+          <span class="score-label">AI probability</span>
+          <strong id="mlProbabilityValue">--</strong>
+        </div>
+        <div class="score-box">
+          <span class="score-label">Rule score</span>
+          <strong id="ruleScoreValue">--</strong>
+        </div>
+        <div class="score-box">
+          <span class="score-label">Flagged links</span>
+          <strong id="flaggedLinksValue">--</strong>
+        </div>
+      </div>
+      <p id="subjectValue" class="meta">Open an email in Gmail to scan it.</p>
+      <p id="senderValue" class="meta"></p>
+      <ul id="reasonsList" class="list"></ul>
+    </section>
+    <section class="card">
+      <div class="row row--space">
+        <h2>Recent scans</h2>
+        <button id="clearHistoryButton" class="button button--ghost">Clear</button>
+      </div>
+      <div id="historyList" class="history-list">
+        <p class="empty">No saved scans yet.</p>
+      </div>
+    </section>
+    <section class="card card--muted">
+      <h2>Model notes</h2>
+      <ul class="list compact">
+        <li>Runs fully inside the browser with no external API calls</li>
+        <li>Combines a trained text classifier with explainable URL checks</li>
+        <li>Stores scan history locally using browser extension storage</li>
+      </ul>
+    </section>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

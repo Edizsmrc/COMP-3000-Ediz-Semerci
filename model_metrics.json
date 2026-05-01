@@ -1,0 +1,13 @@
+{
+  "threshold": 0.55,
+  "accuracy": 0.9282191205792842,
+  "precision": 0.9039850227333511,
+  "recall": 0.9122807017543859,
+  "f1": 0.908113917248791,
+  "true_negative": 5465,
+  "false_positive": 359,
+  "false_negative": 325,
+  "true_positive": 3380,
+  "train_size": 44462,
+  "test_size": 9529
+}
